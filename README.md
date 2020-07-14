@@ -27,6 +27,10 @@ python ./parking_map/map.py
 ## Train your own LSTM model 
 
 1. Unzip model_training/data/parking_data_all_V3.csv.zip and model_training/data/Google_api_V1.csv.zip
+```
+unzip ./model_training/data/parking_data_all_V3.csv.zip
+unzip ./model_training/data/Google_api_V1.csv.zip
+```
 2. Run model_training/model/preprocessing.py for preprocessing csv data to pickle
 ```
 python ./model_training/model/preprocessing.py
