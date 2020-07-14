@@ -1,0 +1,135 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<title>懶得找車位嗎？我有好方法</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="./static/css/main.css" />
+		<style type="text/css">
+			.table_box_big{overflow-x: scroll;overflow-y: hidden;position: relative;height: 350px;}
+			.table_box{overflow: hidden;position: absolute;}
+			.table_tbody_box{height: 300px;overflow: scroll;}
+			table thead tr th{height: 50px;border-right: 1px solid #eeeeee;text-align: center;word-break: normal;padding: 2px 10px;background: #fecdcd;opacity:0.8;}
+			table tbody tr th{overflow:hidden; height: 50px;border-right: 1px solid #eeeeee;text-align: center;word-break: normal;padding: 2px 10px;}
+			table tbody tr td{height: 50px;border-right: 1px solid #eeeeee;text-align: start;word-break: normal;padding: 2px 10px;}
+		</style>
+	
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+				<div id="main">
+					<div class="inner">
+
+						<!-- Header -->
+							<header id="header">
+								<a href="https://demo.jlwu.info:1108/project-bd1082a/" class="logo">懶得找車位嗎？我有好方法</a>
+								<ul class="icons">
+						        	<li ><a href="http://tpis.pma.gov.tw/ParkInfo/realinfo" class="fa fa-globe" target="_blank" style="color:gray;"></a></li>
+						        	<li ></li>
+						        </ul>
+							</header>
+
+
+
+						<!-- Section -->
+							<section>
+								<div >
+									<article><!--{{html_}}-->
+										<iframe srcdoc='{{map_html}}' width="100%" height="500"></iframe>
+										<form action="parking_map" method="POST">
+											<input type="" name="latlon" id="latlon" value="">
+											<button id="parking_map" class="button" style="float:right;">Post</button>
+										</form>
+										<h3>鄰近停車場資訊</h3>
+										<div class="table_box_big">
+											<div class="table_box">
+												<table>
+													<colgroup>
+														<col width="6%">
+														<col width="11%">
+														<col width="6%">
+														<col width="5%">
+														<col width="5%">
+														<col width="5%">
+														<col width="25%">
+														<col width="16%">
+														<col width="7%">
+														<col width="7%">
+														<col width="7%">
+													</colgroup>
+													<thead style="position: -webkit-sticky;">
+														<th  scope="col">名稱</th>
+														<th  scope="col">地址</th>
+														<th  scope="col">可用停車位</th>
+														<th  scope="col">10分鐘</th>
+														<th  scope="col">20分鐘</th>
+														<th  scope="col">30分鐘</th>
+														<th  scope="col">費用</th>
+														<th  scope="col">服務時間</th>
+														<th  scope="col">停車格總數</th>
+														<th  scope="col">交通時間(分鐘)</th>
+														<th  scope="col">交通距離(公里)</th>
+													</thead>
+												</table>
+												<div class="table_tbody_box">
+													<table>
+														<colgroup>
+															<col width="6%">
+															<col width="11%">
+															<col width="6%">
+															<col width="5%">
+															<col width="5%">
+															<col width="5%">
+															<col width="25%">
+															<col width="16%">
+															<col width="7%">
+															<col width="7%">
+															<col width="7%">
+														</colgroup>
+														{% for d in info %}
+												          <tr>
+												          	<td>{{d.name}}</td>
+															<td>{{d.address}}</td>
+															<td>{{d.availablecar}}</td>
+															<td>{{d.ten_minute}}</td>
+															<td>{{d.twenty_minute}}</td>
+															<td>{{d.thirty_minute}}</td>
+															<td>{{d.payex}}</td>
+															<td>{{d.servicetime}}</td>
+															<td>{{d.totalcar}}</td>
+															<td>{{d.minute}}</td>
+															<td>{{d.km}}</td>
+												          </tr> 
+												        {% endfor %}
+		
+													</table>
+												</div>
+											</div>
+										</div>
+										
+									</article>
+									
+								</div>
+							</section>
+
+					</div>
+				</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="./static/js/jquery.min.js"></script>
+			<script src="./static/js/browser.min.js"></script>
+			<script src="./static/js/breakpoints.min.js"></script>
+			<script src="./static/js/util.js"></script>
+			<script src="./static/js/main.js"></script>
+			<script src="./static/js/lib_utility.js"></script>
+			<script src="./static/js/jquery.serializejson.min.js"></script>
+			<script type = "text/javascript" src ="./static/scripts/main.js"></script>
+	</body>
+	
+</html>

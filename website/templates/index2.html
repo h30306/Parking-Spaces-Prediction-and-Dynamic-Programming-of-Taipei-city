@@ -1,0 +1,140 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<title>哪裡可以停V2？</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="./static/css/main.css" />
+		<style type="text/css">
+			.table_box_big{overflow-x: scroll;overflow-y: hidden;position: relative;height: 350px;}
+			.table_box{overflow: hidden;position: absolute;}
+			.table_tbody_box{height: 300px;overflow: scroll;}
+			table thead tr th{height: 50px;border-right: 1px solid #eeeeee;text-align: center;word-break: normal;padding: 2px 10px;background: #fecdcd;opacity:0.8;}
+			table tbody tr th{overflow:hidden; height: 50px;border-right: 1px solid #eeeeee;text-align: center;word-break: normal;padding: 2px 10px;}
+			table tbody tr td{height: 50px;border-right: 1px solid #eeeeee;text-align: start;word-break: normal;padding: 2px 10px;}
+		</style>
+	
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+				<div id="main">
+					<div class="inner">
+
+						<!-- Header -->
+							<header id="header">
+								<a href="index.html" class="logo"><strong>到底</strong> 哪裡可以停？{{haha}}</a>
+								<ul class="icons">
+									<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon brands fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
+									<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+								</ul>
+							</header>
+
+
+
+						<!-- Section -->
+							<section>
+								<div >
+									<article><!--{{html_}}-->
+										<iframe srcdoc='{{map_html}}' width="100%" height="500"></iframe>
+										<form method="Post">
+											<button action="." type="submit" id="parking_map" class="button" style="float:right;">Post</button>
+											<h3>鄰近停車場資訊</h3>
+										</form>
+										<div class="table_box_big">
+											<div class="table_box">
+												<table>
+													<colgroup>
+														<col width="5%">
+														<col width="10%">
+														<col width="3%">
+														<col width="3%">
+														<col width="3%">
+														<col width="3%">
+														<col width="24%">
+														<col width="15%">
+														<col width="5%">
+														<col width="15%">
+														<col width="3%">
+														<col width="10%">
+													</colgroup>
+													<thead style="position: -webkit-sticky;">
+														<th  scope="col">名稱</th>
+														<th  scope="col">地址</th>
+														<th  scope="col">可用停車位</th>
+														<th  scope="col">10分鐘</th>
+														<th  scope="col">20分鐘</th>
+														<th  scope="col">30分鐘</th>
+														<th  scope="col">費用</th>
+														<th  scope="col">服務時間</th>
+														<th  scope="col">停車格總數</th>
+														<th  scope="col">其他</th>
+														<th  scope="col">交通時間</th>
+														<th  scope="col">交通距離</th>
+													</thead>
+												</table>
+												<div class="table_tbody_box">
+												<table>
+													<colgroup>
+														<col width="5%">
+														<col width="11%">
+														<col width="3%">
+														<col width="3%">
+														<col width="3%">
+														<col width="3%">
+														<col width="25%">
+														<col width="15%">
+														<col width="5%">
+														<col width="15%">
+														<col width="3%">
+														<col width="10%">
+													</colgroup>
+													{% for d in info %}
+											          <tr>
+											          	<td>{{d.name}}</td>
+														<td>{{d.address}}</td>
+														<td>{{d.availablecar}}</td>
+														<td>{{d.ten_minute}}</td>
+														<td>{{d.twenty_minute}}</td>
+														<td>{{d.thirty_minute}}</td>
+														<td>{{d.payex}}</td>
+														<td>{{d.servicetime}}</td>
+														<td>{{d.totalcar}}</td>
+														<td>{{d.summary}}</td>
+														<td>{{d.minute}}</td>
+														<td>{{d.km}}</td>
+											          </tr> 
+											        {% endfor %}
+	
+												</table>
+												</div>
+											</div>
+										</div>
+										
+									</article>
+									
+								</div>
+							</section>
+
+					</div>
+				</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="./static/js/jquery.min.js"></script>
+			<script src="./static/js/browser.min.js"></script>
+			<script src="./static/js/breakpoints.min.js"></script>
+			<script src="./static/js/util.js"></script>
+			<script src="./static/js/main.js"></script>
+			<script src="./static/js/lib_utility.js"></script>
+			<script src="./static/js/jquery.serializejson.min.js"></script>
+			<script type = "text/javascript" src ="./static/scripts/main.js"></script>
+	</body>
+	
+</html>
