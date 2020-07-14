@@ -23,3 +23,19 @@ This is a website that can get your location (Only for Taipei City) and predict 
 python ./parking_map/map.py
 ```
 6. Now you can open the website for checking the nearby parking spaces<br>
+
+## Train your own LSTM model 
+
+1. Unzip model_training/data/parking_data_all_V3.csv.zip and model_training/data/Google_api_V1.csv.zip
+2. Run model_training/model/preprocessing.py for preprocessing csv data to pickle
+```
+python ./model_training/model/preprocessing.py
+```
+3. Train LSTM model
+```
+python ./model_training/model/LSTM.py
+```
+4. Move the new LSTM model to prediction model folder
+```
+mv ./model_training/model/lstm_model.h5 ./parking_map/lstm_model.h5
+```
