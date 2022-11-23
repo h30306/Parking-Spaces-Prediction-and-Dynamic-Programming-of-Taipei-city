@@ -1,4 +1,4 @@
-# Parking-spaces-prediction-of-Taipei-city
+# Parking Spaces Prediction and Dynamic Programming of Taipei city
 
 ## Introduction
 
