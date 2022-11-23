@@ -16,7 +16,7 @@ This is a website that can get your location (Only for Taipei City) and predict 
 - keras 2.3.1
 
 ## Two Flasks
-<img src="model.png" width="100%">
+<img src="model.png.jpg" width="100%">
 
 ## Start Up
 
