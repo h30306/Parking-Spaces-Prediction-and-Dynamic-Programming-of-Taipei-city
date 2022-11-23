@@ -15,6 +15,9 @@ This is a website that can get your location (Only for Taipei City) and predict 
 - Tensorflow<2
 - keras 2.3.1
 
+## Two Flasks
+<img src="model.png" width="100%">
+
 ## Start Up
 
 1. Change the sys.path in website/app.wsgi to your own Apache website path<br>
