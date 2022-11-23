@@ -4,6 +4,8 @@
 
 This is a website that can get your location (Only for Taipei City) and predict the number of remaining parking spaces in the nearby parking lot in the next 30 minutes, and calculates the best route to each parking lot using the Google API, reducing the time for waiting for parking spaces. 
 
+## Demonstration
+<img src="website.png" width="100%">
 ## Require
 
 - python>=3
